@@ -13,4 +13,7 @@
     <dependencies>
     </dependencies>
   </metadata>
+  <files>
+    <file src="bin\Release\*.dll" target="lib/net462" />
+  </files>
 </package>
