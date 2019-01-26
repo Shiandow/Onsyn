@@ -5,6 +5,7 @@
     <version>0.1.0</version>
     <authors>Shiandow</authors>
     <owners>Shiandow</owners>
+    <projectUrl>https://github.com/Shiandow/Onsyn</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <description>Abstract nonsense in C#.</description>
