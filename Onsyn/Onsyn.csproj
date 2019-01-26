@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <Version>0.1.0</Version>
+    <Description>Abstract nonsense in C#.</Description>
+    <Authors>Shiandow</Authors>
+    <Product />
+    <Company />
+    <Copyright>Shiandow (2018)</Copyright>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <TreatSpecificWarningsAsErrors />
+    <NuspecFile>relative path to nuspec</NuspecFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="nuget.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="$(ProjectDir)nuget pack -properties configuration=$(ConfigurationName) -outputdirectory $(TargetDir)" />
+  </Target>
+</Project>
